@@ -22,6 +22,8 @@ end
 
 gem 'rake'
 gem 'jquery-rails'
+
+gem 'hydra-head', '5.0.0.pre12'
 gem 'heracles-wrapper', git: "git://github.com/ndlib/heracles-wrapper.git"
 gem 'common_repository_model', git: "git://github.com/ndlib/common_respository_model.git"
 
