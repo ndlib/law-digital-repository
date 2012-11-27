@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 
+gem 'sqlite3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -43,7 +44,9 @@ end
 # gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
+group :development do
+  gem 'capistrano', '2.13.4'
+end
 
 # To use debugger
 # gem 'debugger'
