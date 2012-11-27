@@ -18,17 +18,19 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'jquery-rails'
 end
 
 gem 'rake'
-gem 'jquery-rails'
 
+gem 'blacklight'
 gem 'hydra-head', '5.0.0.pre12'
 gem 'heracles-wrapper', git: "git://github.com/ndlib/heracles-wrapper.git"
 gem 'common_repository_model', git: "git://github.com/ndlib/common_respository_model.git"
 
-group :test do
+group :test, :development do
   gem 'rspec'
+  gem 'rspec-rails'
   gem 'ndlib-on-rspec'
   gem 'factory_girl_rails'
 end
