@@ -8,6 +8,15 @@ class Journal < CommonRepositoryModel::Collection
   def assign_area!
     self.area = named_area_finder.call(AREA_NAME)
   end
+
+  has_metadata(name: "properties",type: ActiveFedora::SimpleDatastream) do |m|
+    m.field 'name', :string
+  end
+
+  validates :name, presence: true
+
+  register_attribute :name, to: 'properties', unique: true
+
   # ***************************************************************************
   # ***************************************************************************
   # NOTE: When managing associations, there is a bug in the underlying

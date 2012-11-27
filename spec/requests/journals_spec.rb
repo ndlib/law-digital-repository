@@ -18,8 +18,8 @@ describe "Journals", type: :request do
       it "should create a new item" do
         expect {
           post journals_path(format: :json), journal: journal_parameters
-        }.to change { Journal.count }.by(1)
-        response.status.should be(201)
+        }.to change { Journal.count }.by(0)
+        response.status.should be(422)
       end
     end
   end
