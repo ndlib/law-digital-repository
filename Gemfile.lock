@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ndlib/common_respository_model.git
-  revision: d0f239484800c1d55a4035cec6cce4165503ba26
+  revision: 785205d5293d0f4729e501fbdf7bacae86ad2763
   specs:
     common_repository_model (0.0.6)
       active-fedora (= 5.0.0.rc3)
@@ -10,6 +10,7 @@ GIT
       factory_girl
       minitest
       minitest-matchers
+      morphine
 
 GIT
   remote: git://github.com/ndlib/heracles-wrapper.git
@@ -89,7 +90,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    columnize (0.3.6)
     daemons (1.1.9)
+    debugger (1.2.2)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.1.1)
+      debugger-ruby_core_source (~> 1.1.5)
+    debugger-linecache (1.1.2)
+      debugger-ruby_core_source (>= 1.1.1)
+    debugger-ruby_core_source (1.1.5)
     deprecation (0.0.5)
       activesupport
     devise (2.1.2)
@@ -284,6 +293,7 @@ DEPENDENCIES
   blacklight
   coffee-rails (~> 3.2.1)
   common_repository_model!
+  debugger
   factory_girl_rails
   heracles-wrapper!
   hydra-head (= 5.0.0.pre12)

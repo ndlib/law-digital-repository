@@ -29,6 +29,7 @@ gem 'heracles-wrapper', git: "git://github.com/ndlib/heracles-wrapper.git"
 gem 'common_repository_model', git: "git://github.com/ndlib/common_respository_model.git"
 
 group :test, :development do
+  gem 'debugger'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'ndlib-on-rspec'
