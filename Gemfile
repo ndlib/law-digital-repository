@@ -20,7 +20,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'rake'
 gem 'jquery-rails'
+gem 'heracles-wrapper', git: "git://github.com/ndlib/heracles-wrapper.git"
+gem 'common_repository_model', git: "git://github.com/ndlib/common_respository_model.git"
+
+group :test do
+  gem 'rspec'
+  gem 'ndlib-on-rspec'
+  gem 'factory_girl_rails'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
