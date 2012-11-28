@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/ndlib/common_respository_model.git
-  revision: bffb846acafb247171a867615d1a3410de3c5d50
+  revision: 4567564ab8f7335b42166c2199e405fcbfc55993
   specs:
-    common_repository_model (0.0.6)
+    common_repository_model (0.0.7)
       active-fedora (= 5.0.0.rc3)
       active_model_serializers
       activemodel (~> 3.2)
@@ -259,14 +259,14 @@ GEM
       nokogiri (>= 1.4.0)
       nori (~> 1.1.0)
       wasabi (~> 2.5.0)
-    solrizer (2.0.0.rc6)
+    solrizer (2.0.0.rc7)
       daemons
       mediashelf-loggable (~> 0.4.7)
       nokogiri
       om (>= 1.5.0)
       stomp
       xml-simple
-    sprockets (2.2.1)
+    sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
