@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/ndlib/common_respository_model.git
-  revision: 6647102b26223930ca44866a3ae02f3d0b64f789
+  remote: git://github.com/ndlib/common_repository_model.git
+  revision: d061c1a5bc69ea88ffe56487a2b55a52a88202b1
   specs:
     common_repository_model (0.0.8)
       active-fedora (= 5.0.0.rc3)
