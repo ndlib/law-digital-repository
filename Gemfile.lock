@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/ndlib/common_respository_model.git
-  revision: 4567564ab8f7335b42166c2199e405fcbfc55993
+  revision: 6647102b26223930ca44866a3ae02f3d0b64f789
   specs:
-    common_repository_model (0.0.7)
+    common_repository_model (0.0.8)
       active-fedora (= 5.0.0.rc3)
       active_model_serializers
       activemodel (~> 3.2)
