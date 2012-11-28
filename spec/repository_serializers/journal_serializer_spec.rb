@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe JournalSerializer do
   subject { JournalSerializer.new(journal) }
-  let(:journal) { FactoryGirl.build(:journal).tap(&:assign_area!) }
+  let(:journal) { FactoryGirl.create(:journal) }
   let(:json) { JSON.parse(subject.to_json) }
   let(:root) { json.fetch('journal') }
   it 'should be JSON' do

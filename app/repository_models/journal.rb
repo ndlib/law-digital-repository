@@ -3,19 +3,20 @@
 require 'common_repository_model/collection'
 require 'morphine'
 class Journal < CommonRepositoryModel::Collection
-  AREA_NAME = 'NDLIB-LAW'.freeze
-  before_validation :assign_area!, on: :create
-  def assign_area!
-    self.area = named_area_finder.call(AREA_NAME)
+  AREA_NAME ='NDLIB-LAW'.freeze
+  def name_of_area_to_assign
+    AREA_NAME
   end
 
-  has_metadata(name: "properties",type: ActiveFedora::SimpleDatastream) do |m|
+  has_metadata(name: "properties", type: ActiveFedora::SimpleDatastream) do |m|
     m.field 'name', :string
   end
 
   validates :name, presence: true
 
   register_attribute :name, to: 'properties', unique: true
+
+  has_members :volumes, class_name: "JournalVolume", property: :is_volume_of
 
   # ***************************************************************************
   # ***************************************************************************

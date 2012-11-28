@@ -5,7 +5,7 @@
 
 require 'common_repository_model/test_support'
 FactoryGirl.define do
-  factory :journal, class: Journal do
+  factory :journal, class: Journal, parent: :common_repository_model_collection do
     sequence(:name) {|n| "Journal Name #{n}"}
   end
 
