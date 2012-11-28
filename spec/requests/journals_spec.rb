@@ -26,10 +26,32 @@ describe "Journals", type: :request do
     end
     describe 'with invalid data' do
       let(:journal_parameters) { FactoryGirl.attributes_for(:invalid_journal) }
-      it "should create a new item" do
+      it "should NOT create a new item" do
         expect {
           post journals_path(format: :json), journal: journal_parameters
         }.to change { Journal.count }.by(0)
+        response.status.should be(422)
+      end
+    end
+  end
+  describe "PUT /journals.json" do
+    before(:each) do
+      @journal = FactoryGirl.create(:journal)
+    end
+    after(:each) do
+      @journal.delete rescue true
+    end
+    describe 'with valid data' do
+      let(:journal_parameters) { FactoryGirl.attributes_for(:journal) }
+      it 'should update an existing item' do
+        put journal_path(@journal, format: :json), journal: journal_parameters
+        response.status.should be(204)
+      end
+    end
+    describe 'with INVALID data' do
+      let(:journal_parameters) { FactoryGirl.attributes_for(:invalid_journal) }
+      it 'should NOT update an existing item' do
+        put journal_path(@journal, format: :json), journal: journal_parameters
         response.status.should be(422)
       end
     end

@@ -12,4 +12,10 @@ class JournalsController < ApplicationController
     respond_with(@journal)
   end
 
+  def update
+    @journal = Journal.find(params[:id])
+    @journal.update_attributes(params[:journal])
+    respond_with(@journal)
+  end
+
 end
