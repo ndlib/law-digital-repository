@@ -44,9 +44,9 @@ end
 # gem 'unicorn'
 
 # Deploy with Capistrano
-group :development do
-  gem 'capistrano', '2.13.4'
-end
+# group :development do
+#   gem 'capistrano', '2.13.5'
+# end
 
 # To use debugger
 # gem 'debugger'
