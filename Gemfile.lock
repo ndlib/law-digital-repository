@@ -1,6 +1,14 @@
 GIT
-  remote: git://github.com/ndlib/common_repository_model.git
-  revision: d061c1a5bc69ea88ffe56487a2b55a52a88202b1
+  remote: git://github.com/ndlib/heracles-wrapper.git
+  revision: 3626a1e7ff92f77ce910a06a9a30413ff3355930
+  specs:
+    heracles-wrapper (0.0.3)
+      method_decorators
+      morphine
+      rest-client
+
+PATH
+  remote: ../common_repository_model
   specs:
     common_repository_model (0.0.8)
       active-fedora (= 5.0.0.rc3)
@@ -11,16 +19,6 @@ GIT
       factory_girl
       minitest
       minitest-matchers
-      morphine
-
-GIT
-  remote: git://github.com/ndlib/heracles-wrapper.git
-  revision: 3626a1e7ff92f77ce910a06a9a30413ff3355930
-  specs:
-    heracles-wrapper (0.0.3)
-      method_decorators
-      morphine
-      rest-client
 
 GEM
   remote: https://rubygems.org/
