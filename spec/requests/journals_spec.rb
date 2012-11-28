@@ -22,6 +22,7 @@ describe "Journals", type: :request do
           post journals_path(format: :json), journal: journal_parameters
         }.to change { Journal.count }.by(1)
         response.status.should be(201)
+        response.location.should == url_for(assigns(:journal))
       end
     end
     describe 'with invalid data' do
