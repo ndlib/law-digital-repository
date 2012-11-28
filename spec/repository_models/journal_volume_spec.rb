@@ -11,4 +11,10 @@ describe JournalVolume do
   it 'should belong to a journal' do
     subject.journal.should == journal
   end
+
+  it 'should validate the presence of at least one journal' do
+    subject.journals = []
+    subject.valid?.should == false
+    subject.errors[:journals].size.should_not == 0
+  end
 end
