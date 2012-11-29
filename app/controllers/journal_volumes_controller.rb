@@ -1,5 +1,5 @@
 class JournalVolumesController < ApplicationController
-  respond_to :xml, :json, :html
+  respond_to :json
 
   def show
     @journal_volume = JournalVolume.find(params[:id])
