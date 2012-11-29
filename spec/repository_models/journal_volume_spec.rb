@@ -5,16 +5,27 @@ require 'common_repository_model/test_support'
 
 describe JournalVolume do
   include CommonRepositoryModel::TestSupport
-  subject { FactoryGirl.build(:journal_volume, journals: [journal]) }
-  let(:journal) { FactoryGirl.build(:journal) }
 
-  it 'should belong to a journal' do
-    subject.journal.should == journal
+  it 'should have volumes' do
+    journal = FactoryGirl.build(:journal)
+    with_persisted_area(journal.name_of_area_to_assign) do |area|
+      journal.save!
+      volume = FactoryGirl.create(:journal_volume, journals: [journal])
+      volume.journals << journal
+      volume.save!
+
+      journal = journal.class.find(journal.pid)
+      volume = volume.class.find(volume.pid)
+
+      assert_rels_ext(volume, :is_volume_of, [journal])
+      assert_rels_ext(volume, :is_member_of, [journal])
+      assert_active_fedora_has_many(volume, :journals, [journal])
+
+      assert_rels_ext(journal, :is_volume_of, [])
+      assert_rels_ext(journal, :is_member_of, [])
+      assert_active_fedora_has_many(journal, :volumes, [volume])
+
+    end
   end
 
-  it 'should validate the presence of at least one journal' do
-    subject.journals = []
-    subject.valid?.should == false
-    subject.errors[:journals].size.should_not == 0
-  end
 end

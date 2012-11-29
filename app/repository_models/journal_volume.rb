@@ -8,17 +8,4 @@ class JournalVolume < CommonRepositoryModel::Collection
 
   is_member_of :journals, class_name: "Journal", property: :is_volume_of
 
-  def journal
-    journals.first
-  end
-
-  validate :validate_number_of_journals
-  def validate_number_of_journals
-    errors.add(
-      :journals,
-      "A #{self.class} must be associated with at least one Journal"
-    ) if journals.count == 0
-  end
-  protected :validate_number_of_journals
-
 end
