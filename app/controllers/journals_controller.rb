@@ -1,6 +1,13 @@
 class JournalsController < ApplicationController
   respond_to :json
 
+  def index
+    @journals = Journal.find(:all)
+    respond_with(@journals) do |format|
+      format.json { render(json: {journals: @journals.collect(&:id)}.to_json) }
+    end
+  end
+
   def show
     @journal = Journal.find(params[:id])
     respond_with(@journal)

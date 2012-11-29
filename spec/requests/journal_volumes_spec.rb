@@ -51,7 +51,7 @@ describe "Journals", type: :request do
       @journal_volume.delete rescue true
     end
     describe 'with valid data' do
-      let(:parameters) { FactoryGirl.attributes_for(:journal_volume) || {} }
+      let(:parameters) { FactoryGirl.attributes_for(:journal_volume) }
       it 'should update an existing item' do
         put journal_volume_path(@journal_volume, format: :json), journal_volume: parameters
         response.status.should be(204)

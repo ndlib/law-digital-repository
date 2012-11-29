@@ -3,6 +3,28 @@ require 'spec_helper'
 require 'common_repository_model/test_support'
 
 describe "Journals", type: :request do
+  describe "GET /journals.json" do
+    before(:each) do
+      @journal1 = FactoryGirl.create(:journal)
+      @journal2 = FactoryGirl.create(:journal)
+      @journal3 = FactoryGirl.create(:journal)
+    end
+    after(:each) do
+      @journal1.delete if @journal1
+      @journal2.delete if @journal2
+      @journal3.delete if @journal3
+    end
+
+    it 'should render JSON object of PIDs' do
+      get journals_path(format: :json)
+      response.status.should be(200)
+      json = JSON.parse(response.body)
+      root = json.fetch('journals')
+      root.should include(@journal1.pid)
+      root.should include(@journal2.pid)
+      root.should include(@journal3.pid)
+    end
+  end
   describe "GET /journals/:pid.json" do
     subject { FactoryGirl.create(:journal) }
     it 'should render JSON object' do
