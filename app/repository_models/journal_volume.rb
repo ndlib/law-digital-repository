@@ -7,5 +7,5 @@ class JournalVolume < CommonRepositoryModel::Collection
   end
 
   is_member_of :journals, class_name: "Journal", property: :is_volume_of
-
+  has_members :articles, class_name: "JournalArticle", property: :is_article_of
 end
