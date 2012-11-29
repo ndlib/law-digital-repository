@@ -14,7 +14,7 @@ class Journal < CommonRepositoryModel::Collection
 
   validates :name, presence: true
 
-  register_attribute :name, to: 'properties', unique: true
+  delegate_to 'properties', [:name], unique: true
 
   has_members :volumes, class_name: "JournalVolume", property: :is_volume_of
 
