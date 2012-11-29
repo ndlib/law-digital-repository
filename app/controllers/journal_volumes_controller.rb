@@ -2,17 +2,18 @@ class JournalVolumesController < ApplicationController
   respond_to :json
 
   def index
-    if params[:journal_id]
-      @journal_volumes = journal.volumes
-    else
-      @journal_volumes = JournalVolume.find(:all)
-    end
+    @journal_volumes = find_journal_volumes
     respond_with(@journal_volumes) do |format|
       format.json {
         render(json: {journal_volumes: @journal_volumes.collect(&:id)}.to_json)
       }
     end
   end
+
+  def find_journal_volumes
+    params[:journal_id] ? journal.volumes : JournalVolume.find(:all)
+  end
+  protected :find_journal_volumes
 
   def show
     @journal_volume = JournalVolume.find(params[:id])
