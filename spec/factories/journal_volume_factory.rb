@@ -7,4 +7,6 @@ require 'common_repository_model/test_support'
 FactoryGirl.define do
   factory :journal_volume, class: JournalVolume, parent: :common_repository_model_collection do
   end
+  factory :invalid_journal_volume, parent: :journal_volume do
+  end
 end
