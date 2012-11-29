@@ -10,7 +10,7 @@ describe JournalVolume do
     journal = FactoryGirl.build(:journal)
     with_persisted_area(journal.name_of_area_to_assign) do |area|
       journal.save!
-      volume = FactoryGirl.create(:journal_volume, journals: [journal])
+      volume = FactoryGirl.create(:journal_volume)
       volume.journals << journal
       volume.save!
 
