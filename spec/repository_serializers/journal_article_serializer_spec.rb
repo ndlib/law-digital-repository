@@ -8,5 +8,6 @@ describe JournalArticleSerializer do
   it 'should be JSON' do
     root.fetch('pid')
     root.fetch('area').should == journal_article.area.pid
+    root.fetch('volumes').sort.should == journal_article.volumes.collect(&:pid).sort
   end
 end
