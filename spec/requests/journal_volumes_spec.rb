@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'common_repository_model/test_support'
 
-describe "Journals", type: :request do
+describe "JournalsVolumes", type: :request do
 
   describe "GET /journal_volumes.json" do
 
