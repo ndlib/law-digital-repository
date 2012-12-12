@@ -5,7 +5,7 @@ class JournalArticlesController < ApplicationController
     @journal_articles = find_journal_articles
     respond_with(@journal_articles) do |format|
       format.json {
-        render(json: {journal_articles: @journal_articles.collect(&:id)}.to_json)
+        render json: {journal_articles: @journal_articles.collect(&:id)}.to_json
       }
     end
   end
