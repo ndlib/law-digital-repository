@@ -21,6 +21,8 @@ describe JournalArticle do
     it { @article.title.should be_kind_of(String) }
     it { @article.issn.should be_kind_of(String) }
     it { @article.abstract.should be_kind_of(String) }
+    it { @article.recommended_citation.should be_kind_of(String) }
+
   end
 
   it 'should have well formed relations between volume/article' do

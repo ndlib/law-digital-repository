@@ -11,15 +11,15 @@ class JournalArticle < CommonRepositoryModel::Collection
     m.field :title, :string
     m.field :issn, :string
     m.field :abstract, :string
+    m.field :recommended_citation, :string
   end
 
-  delegate_to :descriptive_metadata, [:title], unique: true
-  validates :title, presence: true
-
-  delegate_to :descriptive_metadata, [:issn], unique: true
-  validates :issn, presence: true
-
-  delegate_to :descriptive_metadata, [:abstract], unique: true
+  delegate_to(
+    :descriptive_metadata,
+    [:title, :issn, :abstract, :recommended_citation],
+    unique: true
+  )
+  validates :title, :issn, :abstract, :recommended_citation, presence: true
 
   is_member_of :volumes, class_name: "JournalVolume", property: :is_article_of
 end

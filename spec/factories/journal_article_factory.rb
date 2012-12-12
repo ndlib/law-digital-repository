@@ -17,6 +17,7 @@ FactoryGirl.define do
      Ut magna. Curabitur id est. Nulla velit. Sed consectetuer sodales justo.
      Aliquam dictum gravida libero. Sed eu turpis. Nunc id lorem. Aenean
      consequat tempor mi. Phasellus in neque. Nunc fermentum convallis ligula.)
+    recommended_citation 'My Citation'
   end
   factory :invalid_journal_article, parent: :journal_article do
     title nil
