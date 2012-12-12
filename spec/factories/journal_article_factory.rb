@@ -9,4 +9,10 @@ FactoryGirl.define do
   end
   factory :invalid_journal_article, parent: :journal_article do
   end
+  factory :journal_article_with_volume, parent: :journal_article do
+    after(:create) { |article|
+      article.volumes << create(:journal_volume_with_journal)
+      article.save!
+    }
+  end
 end

@@ -6,6 +6,14 @@ require 'common_repository_model/test_support'
 describe JournalVolume do
   include CommonRepositoryModel::TestSupport
 
+  describe 'factories (meta)', slow: true, factory: true do
+    it 'should have a create(:journal_volume_with_journal)' do
+      volume = FactoryGirl.create(:journal_volume_with_journal)
+      volume = volume.class.find(volume.id)
+      volume.journals.count.should == 1
+    end
+  end
+
   it 'should have volumes' do
     journal = FactoryGirl.build(:journal)
     with_persisted_area(journal.name_of_area_to_assign) do |area|
