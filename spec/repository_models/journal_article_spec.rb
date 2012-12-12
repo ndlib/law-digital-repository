@@ -14,6 +14,15 @@ describe JournalArticle do
     end
   end
 
+  describe 'meta_data' do
+    before(:all) do
+      @article = FactoryGirl.create(:journal_article_with_volume)
+    end
+    it { @article.title.should be_kind_of(String) }
+    it { @article.issn.should be_kind_of(String) }
+    it { @article.abstract.should be_kind_of(String) }
+  end
+
   it 'should have well formed relations between volume/article' do
     volume = FactoryGirl.build(:journal_volume)
     with_persisted_area(volume.name_of_area_to_assign) do |area|
