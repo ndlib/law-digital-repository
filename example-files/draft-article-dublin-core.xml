@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dublin_core>
+  <dcvalue element="identifier" qualifier="other">03_1NotreDameL[i](1925--1926)</dcvalue>
+  <dcvalue element="identifier" qualifier="bibliographicCitation">Ben B. Lindsey, The Trial of Criminal Cases and Adult Probation in the Chancery Court, 01 The N. D. Lawyer 03 (1926).</dcvalue>
+  <dcvalue element="identifier" qualifier="doi"></dcvalue>
+  <dcvalue element="identifier" qualifier="uri">uri of record</dcvalue>
+  <dcvalue element="title" qualifier="none">The Trial of Criminal Cases and Adult Probation in the Chancery Court</dcvalue>
+  <dcvalue element="contributor" qualifier="author">Lindsey, Ben B.</dcvalue>
+  <dcvalue element="date" qualifier="created">1925-11-01</dcvalue>
+  <dcvalue element="date" qualifier="issued">1925-11-01</dcvalue>
+  <dcvalue element="date" qualifier="digitized">2012-08-12</dcvalue>
+  <dcvalue element="date" qualifier="accessioned">system generated on intake</dcvalue>
+  <dcvalue element="date" qualifier="available">system generated on publication in repository</dcvalue>
+  <dcvalue element="description" qualifier="abstract">The principle of probation, as applied to offenders against the state--whether such offenders be adults or minors--was originally applied in a limited, way to proceedings in criminal courts. As with all reforms, it came first in a rather limited fashion-generally as to misdemeanors and first offenders; gradually it was extended to more serious offenses.</dcvalue>
+  <dcvalue element="subject" qualifier="none">Probation</dcvalue>
+  <dcvalue element="subject" qualifier="none">The Notre Dame Lawyer</dcvalue>
+  <dcvalue element="subject" qualifier="none">Law Reviews</dcvalue>
+  <dcvalue element="subject" qualifier="none">Lindsey, Ben B., 1900-2000</dcvalue>
+  <dcvalue element="subject" qualifier="none">Criminal</dcvalue>
+  <dcvalue element="language" qualifier="iso">eng</dcvalue>
+  <dcvalue element="type" qualifier="none">Article</dcvalue>
+  <dcvalue element="format" qualifier="none">pdf</dcvalue>
+  <dcvalue element="format" qualifier="extent">size of pdf</dcvalue>
+  <dcvalue element="publisher" qualifier="none">University of Notre Dame</dcvalue>
+  <dcvalue element="publisher" qualifier="repository">University of Notre Dame. Kresege Law Library & Technology</dcvalue>
+  <dcvalue element="publisher" qualifier="digital">University of Notre Dame. Kresege Law Library & Technology</dcvalue>
+  <dcvalue element="publisher" qualifier="institution">University of Notre Dame</dcvalue>
+  <dcvalue element="equipment" qualifier="digitizing">Adobe Acrobat X</dcvalue>
+  <dcvalue element="relation" qualifier="ispartof">The Notre Dame Lawyer</dcvalue>
+  <dcvalue element="relation" qualifier="ispartof">ISSN: 1234-5678</dcvalue>
+  <dcvalue element="relation" qualifier="requires">Adobe Reader</dcvalue>
+  <dcvalue element="source" qualifier="none">The Notre Dame Lawyer: A Monthly Law Review. Volume 1, Number 1, November 1925. Pages 3-10.</dcvalue>
+  <dcvalue element="rights" qualifier="uri">http://nd.edu/copyright/</dcvalue>
+  <dcvalue element="rights" qualifier="accessRights">World</dcvalue>
+ </dublin_core>
