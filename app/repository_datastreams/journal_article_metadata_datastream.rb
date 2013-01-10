@@ -4,21 +4,6 @@
 require 'common_repository_model/metadata_datastream'
 
 class JournalArticleMetadataDatastream < CommonRepositoryModel::MetadataDatastream
-  NOT_AVAILBLE_DATE = Date.new(9999,12,31).freeze
-  def self.text_accessor
-    lambda { |x| x.text.to_s.strip }
-  end
-
-  def self.date_accessor
-    lambda { |x|
-      date = x.text.to_s.strip
-      if date.empty?
-        NOT_AVAILBLE_DATE
-      else
-        Date.parse(date)
-      end
-    }
-  end
   set_terminology(
     namespaces: {
       'dc' => "http://purl.org/dc/elements/1.1/",

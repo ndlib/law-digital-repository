@@ -16,7 +16,7 @@ describe JournalArticleMetadataDatastream do
   it_should_have_term_with_value :title, ['The Trial of Criminal Cases and Adult Probation in the Chancery Court']
   it_should_have_term_with_value :created, [Date.new(1925,11,01)]
   it_should_have_term_with_value :issued, [Date.new(1925,11,02)]
-  it_should_have_term_with_value :available, [JournalArticleMetadataDatastream::NOT_AVAILBLE_DATE]
+  it_should_have_term_with_value :available, [JournalArticleMetadataDatastream.not_available_date]
   it_should_have_term_with_value :subject, ['Probation, The Notre Dame Lawyer, Law Reviews, Lindsey, Ben B., 1900-2000, Criminal']
   it_should_have_term_with_value :abstract, ["The principle of probation, as applied to offenders against the state--whether such offenders be adults or minors--was originally applied in a limited, way to proceedings in criminal courts. As with all reforms, it came first in a rather limited fashion-generally as to misdemeanors and first offenders; gradually it was extended to more serious offenses."]
   it_should_have_term_with_value :publisher, ['University of Notre Dame']
