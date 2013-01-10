@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.11'
+
 
 gem 'sqlite3'
 # Bundle edge Rails instead:
@@ -22,7 +23,8 @@ end
 gem 'rake'
 
 gem 'heracles-wrapper', git: "git://github.com/ndlib/heracles-wrapper.git"
-gem 'common_repository_model', git: "git://github.com/ndlib/common_repository_model.git"
+gem 'common_repository_model', path: "../common_repository_model" # git: "git://github.com/ndlib/common_repository_model.git"
+gem 'active-fedora', git: 'git://github.com/projecthydra/active_fedora.git', ref: '77b51f7778f8ef8a07b11b4ea6b817652fd1d19f', require: 'active_fedora'
 
 group :test, :development do
   gem 'debugger'
