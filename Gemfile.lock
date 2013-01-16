@@ -1,16 +1,4 @@
 GIT
-  remote: git://github.com/ndlib/common_repository_model.git
-  revision: cf135b308c1e02a2d4bf08c08e8b4f79620fc3d9
-  specs:
-    common_repository_model (0.1.0)
-      active-fedora (~> 5.4.0)
-      active_model_serializers
-      activemodel (~> 3.2.11)
-      activesupport (~> 3.2.11)
-      builder (~> 3.0)
-      equivalent-xml
-
-GIT
   remote: git://github.com/ndlib/heracles-wrapper.git
   revision: 3626a1e7ff92f77ce910a06a9a30413ff3355930
   specs:
@@ -37,6 +25,17 @@ GIT
       rsolr
       rubydora (~> 1.2)
       solrizer (~> 2.0.0)
+
+PATH
+  remote: ../common_repository_model
+  specs:
+    common_repository_model (0.1.0)
+      active-fedora (~> 5.4.0)
+      active_model_serializers
+      activemodel (~> 3.2.11)
+      activesupport (~> 3.2.11)
+      builder (~> 3.0)
+      equivalent-xml
 
 GEM
   remote: https://rubygems.org/

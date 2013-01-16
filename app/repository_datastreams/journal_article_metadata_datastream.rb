@@ -3,43 +3,53 @@
 
 require 'common_repository_model/metadata_datastream'
 
+module RDF
+  class UND < Vocabulary('http://library.nd.edu/meta_data/terms/')
+    property :identifierDOI
+    property :identifierURI
+    property :identifierOther
+    property :dateDigitized
+    property :dateAccessioned
+    property :publisherRepository
+    property :publisherDigital
+    property :publisherInstitution
+    property :equipmentDigitizing
+    property "isPartOf.ISSN".to_sym
+  end
+end
+
 class JournalArticleMetadataDatastream < CommonRepositoryModel::MetadataDatastream
-  set_terminology(
-    namespaces: {
-      'dc' => "http://purl.org/dc/elements/1.1/",
-      'dcterms' => "http://purl.org/dc/terms/",
-      'xsi' => "http://www.w3.org/2001/XMLSchema-instance"
-    }
-  ) do |t|
-    t.title(xmlns: 'dc', accessor: text_accessor)
-    t.created(xmlns: 'dcterms', accessor: date_accessor)
-    t.issued(xmlns: 'dcterms', accessor: date_accessor)
-    t.available(xmlns: 'dcterms',accessor: date_accessor)
-    t.subject(xmlns: 'dc',accessor: text_accessor)
-    t.abstract(xmlns: 'dcterms', accessor: text_accessor)
-    t.subject(xmlns: 'dc', accessor: text_accessor)
-    t.publisher(xmlns: 'dc', accessor: text_accessor)
-    t.bibliographic_citation(xmlns: 'dcterms', path: 'bibliographicCitation', accessor: text_accessor)
-    t.source(xmlns: 'dc', accessor: text_accessor)
-    t.is_part_of(xmlns: 'dcterms', path: 'isPartOf', accessor: text_accessor)
-    t.rights(xmlns: 'dc', accessor: text_accessor)
-    t.access_rights(xmlns: 'dcterms', path: 'accessRights', accessor: text_accessor)
-    t.language(xmlns: 'dc', accessor: text_accessor)
-    t.archived_object_type(xmlns: 'dc', path: 'type', accessor: text_accessor)
-    t.modified(path: %(//dcterms:modified[@xsi:type="dcterms:W3CDTF"]), accessor: date_accessor)
-    t.content_format(path: %(//dc:format[@xsi:type="dcterms:IMT"]), accessor: text_accessor)
-    t.extent(xmlns: 'dcterms', accessor: text_accessor)
-    t.requires(xmlns: 'dcterms', accessor: text_accessor)
-    t.identifier_doi(xmlns: 'dcterms', path: 'identifierDOI', accessor: text_accessor)
-    t.identifier_other(xmlns: 'dcterms', path: 'identifierOther', accessor: text_accessor)
-    t.identifier_uri(xmlns: 'dcterms', path: 'identifierURI', accessor: text_accessor)
-    t.creator_author(xmlns: 'dcterms', path: 'creatorAuthor', accessor: text_accessor)
-    t.date_digitized(xmlns: 'dcterms', path: 'dateDigitized', accessor: date_accessor)
-    t.date_accessioned(xmlns: 'dcterms', path: 'dateAccessioned', accessor: date_accessor)
-    t.publisher_repository(xmlns: 'dcterms', path: 'publisherRepository', accessor: text_accessor)
-    t.publisher_digital(xmlns: 'dcterms', path: 'publisherDigital', accessor: text_accessor)
-    t.publisher_institution(xmlns: 'dcterms', path: 'publisherInstitution', accessor: text_accessor)
-    t.equipment_digitizing(xmlns: 'dcterms', path: 'equipmentDigitizing', accessor: text_accessor)
-    t.is_part_of_issn(xmlns: 'dcterms', path: 'isPartOf.ISSN', accessor: text_accessor)
+  register_vocabularies RDF::DC
+  map_predicates do |map|
+    map.title({:in => RDF::DC})
+    map.created({:in => RDF::DC})
+    map.issued({:in => RDF::DC})
+    map.available({:in => RDF::DC})
+    map.subject({:in => RDF::DC})
+    map.abstract({:in => RDF::DC})
+    map.subject({:in => RDF::DC})
+    map.publisher({:in => RDF::DC})
+    map.bibliographic_citation({:in => RDF::DC, :to => 'bibliographicCitation'})
+    map.source({:in => RDF::DC})
+    map.is_part_of({:in => RDF::DC, :to => 'isPartOf'})
+    map.rights({:in => RDF::DC})
+    map.access_rights({:in => RDF::DC, :to => 'accessRights'})
+    map.language({:in => RDF::DC})
+    map.archived_object_type({:in => RDF::DC, :to => 'type'})
+    map.modified({:in => RDF::DC})
+    map.content_format({:in => RDF::DC, :to => 'format'})
+    map.extent({:in => RDF::DC})
+    map.requires({:in => RDF::DC})
+    map.identifier_doi({:in => RDF::UND, :to => 'identifierDOI'})
+    map.identifier_other({:in => RDF::UND, :to => 'identifierOther'})
+    map.identifier_uri({:in => RDF::UND, :to => 'identifierURI'})
+    map.creator({:in => RDF::DC, :to => 'creator'})
+    map.date_digitized({:in => RDF::UND, :to => 'dateDigitized'})
+    map.date_accessioned({:in => RDF::UND, :to => 'dateAccessioned'})
+    map.publisher_repository({:in => RDF::UND, :to => 'publisherRepository'})
+    map.publisher_digital({:in => RDF::UND, :to => 'publisherDigital'})
+    map.publisher_institution({:in => RDF::UND, :to => 'publisherInstitution'})
+    map.equipment_digitizing({:in => RDF::UND, :to => 'equipmentDigitizing'})
+    map.is_part_of_issn({:in => RDF::UND, :to => 'isPartOf.ISSN'})
   end
 end

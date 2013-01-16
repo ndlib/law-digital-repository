@@ -7,7 +7,7 @@ require 'common_repository_model/test_support'
 FactoryGirl.define do
   factory :journal_article, class: JournalArticle, parent: :common_repository_model_collection do
     title 'A Generic Title'
-    issn '1234'
+    is_part_of_issn '1234'
     abstract %(Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus
     vitae risus vitae lorem iaculis placerat. Aliquam sit amet felis. Etiam
     congue. Donec risus risus, pretium ac, tincidunt eu, tempor eu, quam. Morbi
@@ -17,11 +17,11 @@ FactoryGirl.define do
      Ut magna. Curabitur id est. Nulla velit. Sed consectetuer sodales justo.
      Aliquam dictum gravida libero. Sed eu turpis. Nunc id lorem. Aenean
      consequat tempor mi. Phasellus in neque. Nunc fermentum convallis ligula.)
-    recommended_citation 'My Citation'
+    bibliographic_citation 'My Citation'
   end
   factory :invalid_journal_article, parent: :journal_article do
     title nil
-    issn nil
+    is_part_of_issn nil
   end
   factory :journal_article_with_volume, parent: :journal_article do
     after(:create) { |article|

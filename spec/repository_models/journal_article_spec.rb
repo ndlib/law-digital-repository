@@ -19,9 +19,9 @@ describe JournalArticle do
       @article = FactoryGirl.create(:journal_article_with_volume)
     end
     it { @article.title.should be_kind_of(String) }
-    it { @article.issn.should be_kind_of(String) }
+    it { @article.is_part_of_issn.should be_kind_of(String) }
     it { @article.abstract.should be_kind_of(String) }
-    it { @article.recommended_citation.should be_kind_of(String) }
+    it { @article.bibliographic_citation.should be_kind_of(String) }
 
   end
 
