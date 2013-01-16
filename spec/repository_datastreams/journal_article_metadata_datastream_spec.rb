@@ -84,16 +84,16 @@ def rdf_content_for(object)
     <info:fedora/#{object.pid}> <http://purl.org/dc/terms/format> "text/html" .
     <info:fedora/#{object.pid}> <http://purl.org/dc/terms/extent> "14 Kbytes" .
     <info:fedora/#{object.pid}> <http://purl.org/dc/terms/requires> "Adobe Reader" .
-    <info:fedora/#{object.pid}> <http://library.nd.edu/meta_data/terms/identifierOther> "03_1NotreDameL[i](1925--1926)" .
-    <info:fedora/#{object.pid}> <http://library.nd.edu/meta_data/terms/identifierDOI> "doi:123456" .
-    <info:fedora/#{object.pid}> <http://library.nd.edu/meta_data/terms/identifierURI> "URI of record" .
+    <info:fedora/#{object.pid}> <http://library.nd.edu/custom_vocabulary/terms/identifierOther> "03_1NotreDameL[i](1925--1926)" .
+    <info:fedora/#{object.pid}> <http://library.nd.edu/custom_vocabulary/terms/identifierDOI> "doi:123456" .
+    <info:fedora/#{object.pid}> <http://library.nd.edu/custom_vocabulary/terms/identifierURI> "URI of record" .
     <info:fedora/#{object.pid}> <http://purl.org/dc/terms/creator> "Lindsey, Ben B." .
-    <info:fedora/#{object.pid}> <http://library.nd.edu/meta_data/terms/dateDigitized> "2012-01-01" .
-    <info:fedora/#{object.pid}> <http://library.nd.edu/meta_data/terms/isPartOf.ISSN> "1234-5678" .
-    <info:fedora/#{object.pid}> <http://library.nd.edu/meta_data/terms/dateAccessioned> "2012-02-03" .
-    <info:fedora/#{object.pid}> <http://library.nd.edu/meta_data/terms/publisherRepository> "University of Notre Dame. Kresege Law Library & Technology" .
-    <info:fedora/#{object.pid}> <http://library.nd.edu/meta_data/terms/publisherDigital> "University of Notre Dame. Kresege Law Library & Technology" .
-    <info:fedora/#{object.pid}> <http://library.nd.edu/meta_data/terms/publisherInstitution> "University of Notre Dame" .
-    <info:fedora/#{object.pid}> <http://library.nd.edu/meta_data/terms/equipmentDigitizing> "Adobe Acrobat X" .
+    <info:fedora/#{object.pid}> <http://library.nd.edu/custom_vocabulary/terms/dateDigitized> "2012-01-01" .
+    <info:fedora/#{object.pid}> <http://library.nd.edu/custom_vocabulary/terms/isPartOf.ISSN> "1234-5678" .
+    <info:fedora/#{object.pid}> <http://library.nd.edu/custom_vocabulary/terms/dateAccessioned> "2012-02-03" .
+    <info:fedora/#{object.pid}> <http://library.nd.edu/custom_vocabulary/terms/publisherRepository> "University of Notre Dame. Kresege Law Library & Technology" .
+    <info:fedora/#{object.pid}> <http://library.nd.edu/custom_vocabulary/terms/publisherDigital> "University of Notre Dame. Kresege Law Library & Technology" .
+    <info:fedora/#{object.pid}> <http://library.nd.edu/custom_vocabulary/terms/publisherInstitution> "University of Notre Dame" .
+    <info:fedora/#{object.pid}> <http://library.nd.edu/custom_vocabulary/terms/equipmentDigitizing> "Adobe Acrobat X" .
   )
 end
